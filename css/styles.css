@@ -1,0 +1,400 @@
+/* ============================================================
+   GLOBAL BASE STYLES
+   Hybrid Theme: Pink + Green + Blue
+   Author: M. Song — 2026
+============================================================ */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #333;
+    background: #f7faf7; /* soft green tint */
+    font-size: 16px;
+}
+
+/* Hybrid Theme Colors */
+:root {
+    --pink: #d63384;
+    --pink-light: #ffe4ec;
+    --pink-soft: #fff0f6;
+
+    --green: #4CAF50;
+    --green-light: #e8f7e8;
+
+    --blue: #1C4A6E;
+    --blue-light: #e3f0ff;
+
+    --hybrid-light: #f3f7fa;
+    --hybrid-soft: #fdf2f7;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 50px;
+    background: var(--pink-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 90px;
+}
+
+.logo img {
+    height: 70px;
+}
+
+/* ============================================================
+   NAVIGATION BUTTONS
+============================================================ */
+
+nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 12px 22px;
+    min-width: 120px;
+    text-align: center;
+    border-radius: 25px;
+    font-weight: 500;
+    background: var(--blue);
+    color: white;
+    border: 2px solid var(--blue);
+    box-shadow: 0 4px 12px rgba(28,74,110,0.4);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: white;
+    color: var(--blue);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* ============================================================
+   HERO SECTION
+============================================================ */
+
+.hero {
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+
+    /* Hybrid animated gradient */
+    background: linear-gradient(
+        270deg,
+        #ff4d94,
+        #4CAF50,
+        #1C4A6E,
+        #ff99c8
+    );
+    background-size: 800% 800%;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    background: var(--pink);
+    color: white;
+    border: 2px solid var(--pink);
+    box-shadow: 0 6px 18px rgba(214,51,132,0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-btn:hover {
+    background: white;
+    color: var(--pink);
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* ============================================================
+   SECTIONS
+============================================================ */
+
+.section {
+    padding: 70px 10%;
+    text-align: center;
+}
+
+.hybrid-light {
+    background: var(--hybrid-light);
+}
+
+.hybrid-soft {
+    background: var(--hybrid-soft);
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: var(--blue);
+}
+
+/* ============================================================
+   CARDS
+============================================================ */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    width: 280px;
+    padding: 25px;
+    background: white;
+    border: 2px solid var(--blue-light);
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-color: var(--pink);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background: var(--pink);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.card ul {
+    text-align: left;
+    padding-left: 18px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   TESTIMONIALS
+============================================================ */
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.testimonial {
+    background: white;
+    padding: 20px;
+    border-left: 5px solid var(--green);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    font-style: italic;
+    color: #444;
+}
+
+/* ============================================================
+   CONTACT SECTION
+============================================================ */
+
+.join-text {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.contact-photo {
+    width: 420px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+form {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+    background: white;
+    border: 2px solid var(--pink-light);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+input, textarea {
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+textarea {
+    height: 140px;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--pink);
+    outline: none;
+}
+
+/* ============================================================
+   SCROLL TO TOP BUTTON
+============================================================ */
+
+#topBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 12px 16px;
+    background: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    width: 80%;
+    margin: 20px auto 10px auto;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 10px 0;
+    background: var(--pink-light);
+}
+
+.footer-text {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+============================================================ */
+
+@media (max-width: 768px) {
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 95%;
+        max-width: 400px;
+    }
+
+    .section {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-photo,
+    form {
+        width: 100%;
+        max-width: 400px;
+    }
+}
